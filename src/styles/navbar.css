@@ -1,0 +1,20 @@
+.HomeNavBar,
+.navbarInnerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  z-index: 100;
+  background-color: #2cc6b0;
+}
+
+.navbarInnerContent {
+  align-self: center;
+  width: 90%;
+}
+
+#logoGif {
+  height: 65px;
+}

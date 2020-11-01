@@ -1,0 +1,2208 @@
+{
+	"info": {
+		"_postman_id": "f47b3008-1763-43a4-9997-7fa155593edc",
+		"name": "ASAP APIs V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "service Module",
+			"item": [
+				{
+					"name": "SP Add service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "login_cookie",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_id\": \"68764fa7-aeed-42d3-9ae3-d7e681ff1f57\",\n    \"experience\":\"12\",\n    \"service_location\": \"LOCATION_PROVIDER\",\n    \"sp_address\":\"Service location, ahmedabad, Gujrat, India\",\n    \"lat\": \"\",\n    \"lng\": \"\",\n    \"service_types\": [\n        {\n            \"rate_type\": \"d8167474-5063-410a-a4a4-ac1d56ff7e49\",\n            \"price\": \"100\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "e9a77b2c-8663-4750-a0a5-3ee98bea3a3d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP get service by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "login_cookie",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services/:serviceId",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services",
+								":serviceId"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "519b2693-4913-482b-95b7-338c5d47df2f"
+								},
+								{
+									"key": "serviceId",
+									"value": "718ac000-3c3f-4f26-9cde-17346495af4c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP delete service",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "login_cookie",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services/:serviceId",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services",
+								":serviceId"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "edce89a5-21a9-4d9a-90da-e04153e306f9"
+								},
+								{
+									"key": "serviceId",
+									"value": "2b06118e-11be-444f-bfac-ce5fe478bade"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP List services",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "login_cookie",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "519b2693-4913-482b-95b7-338c5d47df2f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP List services (Grouped)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services-v2",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services-v2"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "519b2693-4913-482b-95b7-338c5d47df2f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[DELETED] SP service update status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "login_cookie",
+								"type": "text",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookNow\": false,\n     \"textNow\": false,\n            \"hireNow\": false,\n            \"callNow\": false\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{url}}{{v2}}service-providers/d08b85a0-3600-4074-bab3-d8c2b6073ee7/services/6ea91ce3-8509-4713-b0e8-109c355e4dd7/status",
+							"host": [
+								"{{url}}{{v2}}service-providers"
+							],
+							"path": [
+								"d08b85a0-3600-4074-bab3-d8c2b6073ee7",
+								"services",
+								"6ea91ce3-8509-4713-b0e8-109c355e4dd7",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP edit service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "login_cookie",
+								"type": "text",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"experience\":\"87\",\n    \"service_location\": \"LOCATION_PROVIDER\",\n    \"sp_address\":\"My Def Address\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/service-providers/:tenantId/services/:serviceId",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-providers",
+								":tenantId",
+								"services",
+								":serviceId"
+							],
+							"variable": [
+								{
+									"key": "tenantId",
+									"value": "519b2693-4913-482b-95b7-338c5d47df2f"
+								},
+								{
+									"key": "serviceId",
+									"value": "31d6f696-decb-4767-be83-0a478e84fdb3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP get reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api2}}/service-provider/:technicianId/reviews",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"service-provider",
+								":technicianId",
+								"reviews"
+							],
+							"variable": [
+								{
+									"key": "technicianId",
+									"value": "dc0f65df-b610-447a-b572-48455e85e9d7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP Toggle Category Services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/services/:categoryId/toggleStatus",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"services",
+								":categoryId",
+								"toggleStatus"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "68764fa7-aeed-42d3-9ae3-d7e681ff1f57"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SP service add image [deleted]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tenantId\": \"\",\n    \"serviceId\": \"\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{api2}}/services/service-image",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"services",
+								"service-image"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "External Users",
+					"item": [
+						{
+							"name": "Switch User Roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": \"service_provider\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/role/switch",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"role",
+										"switch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "External User Registeration",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bc3356df-053a-4099-bb09-5054c1d50d7a",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var reqBody = JSON.parse(request.data);\r",
+											"\r",
+											"postman.setEnvironmentVariable(\"userRole\", \"customer\");    \r",
+											"\r",
+											"postman.setEnvironmentVariable(\"otp\", jsonData.otp);\r",
+											"postman.setEnvironmentVariable(\"email\",reqBody.email);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"New\",\n    \"last_name\": \"SP\",\n    \"phone_number\": \"+919014141412\",\n    \"email\": \"jude+4septsp140@subcodevs.com\",\n    \"password\": \"jude+4septsp140@subcodevs.com\",\n    \"user_type\": \"service_provider\",\n    \"name\": \"Hello\",\n    \"isAgency\": false,\n    \"referral_code\": \"002375\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/register",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Service Provider Registration",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"phone_number\": \"+919876543299\",\n    \"email\": \"rscipher001+sp3@gmail.com\",\n    \"password\": \"rscipher001+sp3@gmail.com\",\n    \"user_type\": \"service_provider\",\n    \"name\": \"my personal tenant\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/register",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "120"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"78-ajhudDxC25mcT7UkHpv7X2OkcHg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 04 Jul 2020 07:55:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"User created successfully and otp sent to registered email and phone\",\n    \"data\": null,\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Refresh Access Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "53f5285a-8b2d-4ead-aa57-4d7d206e31b8",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var userRole = pm.environment.get(\"userRole\");\r",
+											"\r",
+											"if(userRole === 'customer'){\r",
+											"    postman.setEnvironmentVariable(\"customerToken\", jsonData.token);    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"technicianToken\", jsonData.token);\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzNDhkNmZmLTNiZDEtNDZjNy1hNjEwLTZhNjdhNDQzOWQ2OCIsImZpcnN0X25hbWUiOiJTYW0iLCJsYXN0X25hbWUiOiJKYWNrc29uIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InNmb2VAemhjbmUuY29tIiwiZGV2aWNlX3R5cGUiOiJtb2JpbGUiLCJkZXZpY2VfaWQiOiIxZmM0OWU4OS1kYzYzLTRkYWUtYmY0My1kYjcwMDc4NjUzNzQiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjpmYWxzZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjp0cnVlLCJpc19leGVjdXRpdmVfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJhY2NvdW50X21hbmFnZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjYyMGU1Y2RmLWE1YmMtNGI3Ny04MzY3LTAyY2QzZGU2Yjg1NSIsInJvbGVfbmFtZSI6InNhbGVzLXJlcCJ9LCJ0ZW5hbnQiOnsiaWQiOiJkZTIyZTYzMS0xMWVjLTQxNjUtOGE5YS1kODc0Y2VjZjc2YzIifSwicmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNTkxMzU0MzU4LCJleHAiOjMxODUzMDA3MTYsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.kt2ljn5WiUNl9cdG_bzbE6BFDzeQVSBIIBuPKzFXuvQ\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/token/refresh",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"token",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend Otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4f218dfe-4fe0-483a-b587-89367b351b83",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var reqBody = JSON.parse(request.data);\r",
+											"if(reqBody.role === 'technician'){\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"technician\");    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"customer\");\r",
+											"}\r",
+											"postman.setEnvironmentVariable(\"otp\", jsonData.otp);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"rscipher001@gmail.com\",\n    \"phone_number\": \"+919098109892\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/otp/resend",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"otp",
+										"resend"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Resend OTP SP",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"rscipher001+sp3@gmail.com\",\n    \"phone_number\": \"+919876543299\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/otp/resend",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"otp",
+												"resend"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "110"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6e-qI4ScAF5ItCOwy0+OJTRUbbKWZ0\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 04 Jul 2020 08:02:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": null,\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify Otp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f1d9d436-1850-4a92-b27e-bbec86d7332b",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var userRole = pm.environment.get(\"userRole\");\r",
+											"\r",
+											"if(userRole === 'customer'){\r",
+											"    postman.setEnvironmentVariable(\"customerToken\", jsonData.token);    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"technicianToken\", jsonData.token);\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"otp\":\"1234\",\n    \"phone_number\":\"+919876543991\",\n    \"role\":\"customer\",\n    \"device_type\": \"android\",\n    \"device_token\": \"50ff4825-89a2-4c50-a475-a0d30db95492\",\n    \"device_id\": \"4a8efcf6-4b44-42b9-8b89-37ed3f430558\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/otp/verify",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"otp",
+										"verify"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Verify Otp SP",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"otp\": 1234,\n    \"phone_number\": \"+919876543299\",\n    \"device_type\": \"mobile\",\n    \"device_token\": \"{{$randomUUID}}\",\n    \"device_id\": \"{{$randomUUID}}\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/otp/verify",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"otp",
+												"verify"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2639"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"a4f-FkASyldt8xLFOQd94iBYLu3UkIs\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 04 Jul 2020 08:05:51 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"Successfully verified otp\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2MzNiZTk1LWE1ZmYtNDk4Zi05ZTVhLTFmZmYxYTRkMDRlNiIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK3NwM0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK3NwM0BnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6Im1vYmlsZSIsImRldmljZV9pZCI6ImM4NDMyNWZiLTM3ZTItNDNjZC1iOWUzLWIzZmU0YjZiOTRhYSIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiJjOWYzY2ZjNC00MjQyLTQ0MmMtYmFjNC1lZDlkOGNkODE2MzkiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiJmZTY3YzM5My01YWY3LTQyMjItYWM2OC0wNGIyN2JmYTQzMTcifSwiaWF0IjoxNTkzODQ5OTUxLCJleHAiOjMxODc3MDA1MDIsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.MOkxGcYpDGAmDgS-udi40Jbj18PUEO0mUAVE8ga4YsM\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2MzNiZTk1LWE1ZmYtNDk4Zi05ZTVhLTFmZmYxYTRkMDRlNiIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK3NwM0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK3NwM0BnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6Im1vYmlsZSIsImRldmljZV9pZCI6ImM4NDMyNWZiLTM3ZTItNDNjZC1iOWUzLWIzZmU0YjZiOTRhYSIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiJjOWYzY2ZjNC00MjQyLTQ0MmMtYmFjNC1lZDlkOGNkODE2MzkiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiJmZTY3YzM5My01YWY3LTQyMjItYWM2OC0wNGIyN2JmYTQzMTcifSwicmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNTkzODQ5OTUxLCJleHAiOjMxOTAyOTE5MDIsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.OunBLG0wx2NIbO_8mr-QFjvxJRRL3U9XKXYc3dfwiRo\",\n            \"accessTokenExpiry\": 1593850551,\n            \"refreshTokenExpiry\": 1596441951,\n            \"generatedTime\": 1593849951\n        },\n        \"user\": {\n            \"id\": \"f633be95-a5ff-498f-9e5a-1fff1a4d04e6\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"rscipher001+sp3@gmail.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\"\n        }\n    },\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "External Users Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8d7eeb4c-ca9d-4c52-8566-c96ec43decd0",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var reqBody = JSON.parse(request.data);\r",
+											"if(reqBody.role === 'technician'){\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"technician\");    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"customer\");\r",
+											"}\r",
+											"postman.setEnvironmentVariable(\"otp\", jsonData.otp);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"jude+4sept@subcodevs.com\",\n    \"password\": \"jude+4sept@subcodevs.com\",\n    \"role\": \"service_provider\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/login",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "External Users Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"jude+10aug@subcodevs.com\",\n    \"password\": \"jude+10aug@subcodevs.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2879"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b3f-bqwTFg6LHnBBAwef/G6Vbs7scVc\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Aug 2020 11:06:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1YTc1MTc5LTdiNmMtNDM5NC1hMTI4LTE1NTExMTY5ZmRlNCIsImZpcnN0X25hbWUiOiJOZXciLCJsYXN0X25hbWUiOiJTUCIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJqdWRlKzEwYXVnQHN1YmNvZGV2cy5jb20iLCJ1c2VybmFtZSI6Imp1ZGUrMTBhdWdAc3ViY29kZXZzLmNvbSIsInVzZXJfc3RhdHVzIjoiUGVuZGluZyIsImRldmljZV90eXBlIjpudWxsLCJkZXZpY2VfaWQiOiI2ZTkzOTM4ZC1mM2JlLTQ5NzgtYmVlNS04OWYwZWFlMGNjMzgiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjp0cnVlLCJpc19hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19leGVjdXRpdmVfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfc2VydmljZV9wcm92aWRlcl9lbXBsb3llZSI6ZmFsc2UsImFjdGl2ZV9yb2xlIjoic2VydmljZV9wcm92aWRlciIsInJvbGUiOnsidXNlcl9yb2xlX2lkIjoiYWYwMTRjNjEtYjQ0Yy00YjU4LTllYTEtMDFhM2U1NThhOTdkIiwicm9sZV9uYW1lIjoidGVjaG5pY2lhbiIsInJvbGVfaWQiOiJiMDNlNmI2ZC0zNTBiLTQ2ZWItYjcwNi1kZTk3ZDczOTZhMDAifSwidGVuYW50Ijp7ImlkIjoiMGMyYjE3ZGMtZTZhZS00MDRlLTg1MzItOGEzMDA2YmEzY2ZkIn0sImlhdCI6MTU5NzA1NzU4MSwiZXhwIjoxNjA1Njk3NTgxLCJhdWQiOiJoaXJlYXNhcC5jb20iLCJpc3MiOiJhY2NvdW50cy5oaXJlYXNhcC5jb20ifQ.qLD4txgf4HB35PMOXHJuDZZkqfR2-og6FbcWR3hXs4g\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1YTc1MTc5LTdiNmMtNDM5NC1hMTI4LTE1NTExMTY5ZmRlNCIsImZpcnN0X25hbWUiOiJOZXciLCJsYXN0X25hbWUiOiJTUCIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJqdWRlKzEwYXVnQHN1YmNvZGV2cy5jb20iLCJ1c2VybmFtZSI6Imp1ZGUrMTBhdWdAc3ViY29kZXZzLmNvbSIsInVzZXJfc3RhdHVzIjoiUGVuZGluZyIsImRldmljZV90eXBlIjpudWxsLCJkZXZpY2VfaWQiOiI2ZTkzOTM4ZC1mM2JlLTQ5NzgtYmVlNS04OWYwZWFlMGNjMzgiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjp0cnVlLCJpc19hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19leGVjdXRpdmVfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfc2VydmljZV9wcm92aWRlcl9lbXBsb3llZSI6ZmFsc2UsImFjdGl2ZV9yb2xlIjoic2VydmljZV9wcm92aWRlciIsInJvbGUiOnsidXNlcl9yb2xlX2lkIjoiYWYwMTRjNjEtYjQ0Yy00YjU4LTllYTEtMDFhM2U1NThhOTdkIiwicm9sZV9uYW1lIjoidGVjaG5pY2lhbiIsInJvbGVfaWQiOiJiMDNlNmI2ZC0zNTBiLTQ2ZWItYjcwNi1kZTk3ZDczOTZhMDAifSwidGVuYW50Ijp7ImlkIjoiMGMyYjE3ZGMtZTZhZS00MDRlLTg1MzItOGEzMDA2YmEzY2ZkIn0sInJlZnJlc2giOnRydWUsImlhdCI6MTU5NzA1NzU4MSwiZXhwIjoxNTk5NjQ5NTgxLCJhdWQiOiJoaXJlYXNhcC5jb20iLCJpc3MiOiJhY2NvdW50cy5oaXJlYXNhcC5jb20ifQ.1Pgsf8ps81Fp8aSuvdX7lGql4DeEQhf2Z1PV4jDtgp8\",\n            \"accessTokenExpiry\": 1597058181,\n            \"refreshTokenExpiry\": 1599649581,\n            \"generatedTime\": 1597057581\n        },\n        \"user\": {\n            \"id\": \"e5a75179-7b6c-4394-a128-15511169fde4\",\n            \"first_name\": \"New\",\n            \"last_name\": \"SP\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"jude+10aug@subcodevs.com\",\n            \"username\": \"jude+10aug@subcodevs.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"af014c61-b44c-4b58-9ea1-01a3e558a97d\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"0c2b17dc-e6ae-404e-8532-8a3006ba3cfd\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								},
+								{
+									"name": "Bug FIx Helper",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"william@example.com\",\n    \"password\": \"william@example.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.14.0 (Ubuntu)"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jul 2020 06:42:43 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2863"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b2f-URLKTBK9g3DqmqCWBisn/N3U+aQ\""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYzg5NTM1LWZkNzQtNDU2Ny1hNWUyLWQ4ZGVmYjcxOTNlMSIsImZpcnN0X25hbWUiOiJXaWxsaWFtIiwibGFzdF9uYW1lIjoiRG9pZSIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOm51bGwsImRldmljZV9pZCI6ImU4OTMwYzUxLTFkNzEtNDQ3ZS05MTFhLTBkNGRlMzk5ZDQ2YyIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIyYmEyOTg5MS0wNzllLTQ1NGQtYjM5Yy00ZTQ4NTgzZGE1YmQiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiIwYzI3NzZkOS0yYmQ1LTRiNmEtYWU2OS04NGY1OGFkYmIzMDgifSwiaWF0IjoxNTk1NDAwMTYzLCJleHAiOjMxOTA4MDA5MjYsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.aFvqnOmiXdd02UdRy9C8Zt4yDxndhpoLKVjuDafu4hI\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYzg5NTM1LWZkNzQtNDU2Ny1hNWUyLWQ4ZGVmYjcxOTNlMSIsImZpcnN0X25hbWUiOiJXaWxsaWFtIiwibGFzdF9uYW1lIjoiRG9pZSIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOm51bGwsImRldmljZV9pZCI6ImU4OTMwYzUxLTFkNzEtNDQ3ZS05MTFhLTBkNGRlMzk5ZDQ2YyIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIyYmEyOTg5MS0wNzllLTQ1NGQtYjM5Yy00ZTQ4NTgzZGE1YmQiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiIwYzI3NzZkOS0yYmQ1LTRiNmEtYWU2OS04NGY1OGFkYmIzMDgifSwicmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNTk1NDAwMTYzLCJleHAiOjMxOTMzOTIzMjYsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.QFt2hXHObP3CzZI8AA3IXlf8YTUGEVy8yHq7giBO7O0\",\n            \"accessTokenExpiry\": 1595400763,\n            \"refreshTokenExpiry\": 1597992163,\n            \"generatedTime\": 1595400163\n        },\n        \"user\": {\n            \"id\": \"4ac89535-fd74-4567-a5e2-d8defb7193e1\",\n            \"first_name\": \"William\",\n            \"last_name\": \"Doie\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"william@example.com\",\n            \"username\": \"william@example.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"2ba29891-079e-454d-b39c-4e48583da5bd\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"0c2776d9-2bd5-4b6a-ae69-84f58adbb308\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								},
+								{
+									"name": "External Users Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"rscipher001+johndoe12@gmail.com\",\n    \"password\": \"rscipher001+johndoe12@gmail.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2937"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b79-oYoSbCHunjjUgfR+cU3ddDoz1fw\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Jul 2020 13:36:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5MmI0NjE3LTljNzYtNDY0MC05ZjU5LTdhYzQzMjBiMTIwNCIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiMjlmOGE1YjMtZDE2NC00NTgxLWExYjYtOGM2MDMxZTlmZGFjIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjA5MGE5OWI2LTRmNzAtNDg3MC1hMDA3LTQ4Zjc0MjdjNThkZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6Ijg0ZTlhYTIzLTQxZDEtNDVhYy1iMmQ2LThhYWIyOGRkMTBhMCJ9LCJpYXQiOjE1OTQxMjkwMTMsImV4cCI6MzE4ODI1ODYyNiwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.fB3sZwlH0zjd7dybRtrpaCFE0QRdgQsv8t17LPiLejM\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5MmI0NjE3LTljNzYtNDY0MC05ZjU5LTdhYzQzMjBiMTIwNCIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiMjlmOGE1YjMtZDE2NC00NTgxLWExYjYtOGM2MDMxZTlmZGFjIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjA5MGE5OWI2LTRmNzAtNDg3MC1hMDA3LTQ4Zjc0MjdjNThkZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6Ijg0ZTlhYTIzLTQxZDEtNDVhYy1iMmQ2LThhYWIyOGRkMTBhMCJ9LCJyZWZyZXNoIjp0cnVlLCJpYXQiOjE1OTQxMjkwMTMsImV4cCI6MzE5MDg1MDAyNiwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.YWx5_wckqMy_UVTtn-8q9kZb_i0den3X8PdZapaIxoA\",\n            \"accessTokenExpiry\": 1594129613,\n            \"refreshTokenExpiry\": 1596721013,\n            \"generatedTime\": 1594129013\n        },\n        \"user\": {\n            \"id\": \"492b4617-9c76-4640-9f59-7ac4320b1204\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"rscipher001+johndoe12@gmail.com\",\n            \"username\": \"rscipher001+johndoe12@gmail.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"090a99b6-4f70-4870-a007-48f7427c58de\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"84e9aa23-41d1-45ac-b2d6-8aab28dd10a0\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "External Users Get All Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5124f200-d5ef-49e4-af5f-f5bd85abc195",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"john@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/getRoles",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"getRoles"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "External Users Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"jude+10aug@subcodevs.com\",\n    \"password\": \"jude+10aug@subcodevs.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2879"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b3f-bqwTFg6LHnBBAwef/G6Vbs7scVc\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Aug 2020 11:06:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1YTc1MTc5LTdiNmMtNDM5NC1hMTI4LTE1NTExMTY5ZmRlNCIsImZpcnN0X25hbWUiOiJOZXciLCJsYXN0X25hbWUiOiJTUCIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJqdWRlKzEwYXVnQHN1YmNvZGV2cy5jb20iLCJ1c2VybmFtZSI6Imp1ZGUrMTBhdWdAc3ViY29kZXZzLmNvbSIsInVzZXJfc3RhdHVzIjoiUGVuZGluZyIsImRldmljZV90eXBlIjpudWxsLCJkZXZpY2VfaWQiOiI2ZTkzOTM4ZC1mM2JlLTQ5NzgtYmVlNS04OWYwZWFlMGNjMzgiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjp0cnVlLCJpc19hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19leGVjdXRpdmVfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfc2VydmljZV9wcm92aWRlcl9lbXBsb3llZSI6ZmFsc2UsImFjdGl2ZV9yb2xlIjoic2VydmljZV9wcm92aWRlciIsInJvbGUiOnsidXNlcl9yb2xlX2lkIjoiYWYwMTRjNjEtYjQ0Yy00YjU4LTllYTEtMDFhM2U1NThhOTdkIiwicm9sZV9uYW1lIjoidGVjaG5pY2lhbiIsInJvbGVfaWQiOiJiMDNlNmI2ZC0zNTBiLTQ2ZWItYjcwNi1kZTk3ZDczOTZhMDAifSwidGVuYW50Ijp7ImlkIjoiMGMyYjE3ZGMtZTZhZS00MDRlLTg1MzItOGEzMDA2YmEzY2ZkIn0sImlhdCI6MTU5NzA1NzU4MSwiZXhwIjoxNjA1Njk3NTgxLCJhdWQiOiJoaXJlYXNhcC5jb20iLCJpc3MiOiJhY2NvdW50cy5oaXJlYXNhcC5jb20ifQ.qLD4txgf4HB35PMOXHJuDZZkqfR2-og6FbcWR3hXs4g\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1YTc1MTc5LTdiNmMtNDM5NC1hMTI4LTE1NTExMTY5ZmRlNCIsImZpcnN0X25hbWUiOiJOZXciLCJsYXN0X25hbWUiOiJTUCIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJqdWRlKzEwYXVnQHN1YmNvZGV2cy5jb20iLCJ1c2VybmFtZSI6Imp1ZGUrMTBhdWdAc3ViY29kZXZzLmNvbSIsInVzZXJfc3RhdHVzIjoiUGVuZGluZyIsImRldmljZV90eXBlIjpudWxsLCJkZXZpY2VfaWQiOiI2ZTkzOTM4ZC1mM2JlLTQ5NzgtYmVlNS04OWYwZWFlMGNjMzgiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjp0cnVlLCJpc19hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19leGVjdXRpdmVfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfc2VydmljZV9wcm92aWRlcl9lbXBsb3llZSI6ZmFsc2UsImFjdGl2ZV9yb2xlIjoic2VydmljZV9wcm92aWRlciIsInJvbGUiOnsidXNlcl9yb2xlX2lkIjoiYWYwMTRjNjEtYjQ0Yy00YjU4LTllYTEtMDFhM2U1NThhOTdkIiwicm9sZV9uYW1lIjoidGVjaG5pY2lhbiIsInJvbGVfaWQiOiJiMDNlNmI2ZC0zNTBiLTQ2ZWItYjcwNi1kZTk3ZDczOTZhMDAifSwidGVuYW50Ijp7ImlkIjoiMGMyYjE3ZGMtZTZhZS00MDRlLTg1MzItOGEzMDA2YmEzY2ZkIn0sInJlZnJlc2giOnRydWUsImlhdCI6MTU5NzA1NzU4MSwiZXhwIjoxNTk5NjQ5NTgxLCJhdWQiOiJoaXJlYXNhcC5jb20iLCJpc3MiOiJhY2NvdW50cy5oaXJlYXNhcC5jb20ifQ.1Pgsf8ps81Fp8aSuvdX7lGql4DeEQhf2Z1PV4jDtgp8\",\n            \"accessTokenExpiry\": 1597058181,\n            \"refreshTokenExpiry\": 1599649581,\n            \"generatedTime\": 1597057581\n        },\n        \"user\": {\n            \"id\": \"e5a75179-7b6c-4394-a128-15511169fde4\",\n            \"first_name\": \"New\",\n            \"last_name\": \"SP\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"jude+10aug@subcodevs.com\",\n            \"username\": \"jude+10aug@subcodevs.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"af014c61-b44c-4b58-9ea1-01a3e558a97d\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"0c2b17dc-e6ae-404e-8532-8a3006ba3cfd\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								},
+								{
+									"name": "Bug FIx Helper",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"william@example.com\",\n    \"password\": \"william@example.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.14.0 (Ubuntu)"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jul 2020 06:42:43 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2863"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b2f-URLKTBK9g3DqmqCWBisn/N3U+aQ\""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYzg5NTM1LWZkNzQtNDU2Ny1hNWUyLWQ4ZGVmYjcxOTNlMSIsImZpcnN0X25hbWUiOiJXaWxsaWFtIiwibGFzdF9uYW1lIjoiRG9pZSIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOm51bGwsImRldmljZV9pZCI6ImU4OTMwYzUxLTFkNzEtNDQ3ZS05MTFhLTBkNGRlMzk5ZDQ2YyIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIyYmEyOTg5MS0wNzllLTQ1NGQtYjM5Yy00ZTQ4NTgzZGE1YmQiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiIwYzI3NzZkOS0yYmQ1LTRiNmEtYWU2OS04NGY1OGFkYmIzMDgifSwiaWF0IjoxNTk1NDAwMTYzLCJleHAiOjMxOTA4MDA5MjYsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.aFvqnOmiXdd02UdRy9C8Zt4yDxndhpoLKVjuDafu4hI\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRhYzg5NTM1LWZkNzQtNDU2Ny1hNWUyLWQ4ZGVmYjcxOTNlMSIsImZpcnN0X25hbWUiOiJXaWxsaWFtIiwibGFzdF9uYW1lIjoiRG9pZSIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJ3aWxsaWFtQGV4YW1wbGUuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOm51bGwsImRldmljZV9pZCI6ImU4OTMwYzUxLTFkNzEtNDQ3ZS05MTFhLTBkNGRlMzk5ZDQ2YyIsImlzX3NlcnZpY2VfcHJvdmlkZXIiOnRydWUsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiYWN0aXZlX3JvbGUiOiJzZXJ2aWNlX3Byb3ZpZGVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIyYmEyOTg5MS0wNzllLTQ1NGQtYjM5Yy00ZTQ4NTgzZGE1YmQiLCJyb2xlX25hbWUiOiJ0ZWNobmljaWFuIiwicm9sZV9pZCI6ImIwM2U2YjZkLTM1MGItNDZlYi1iNzA2LWRlOTdkNzM5NmEwMCJ9LCJ0ZW5hbnQiOnsiaWQiOiIwYzI3NzZkOS0yYmQ1LTRiNmEtYWU2OS04NGY1OGFkYmIzMDgifSwicmVmcmVzaCI6dHJ1ZSwiaWF0IjoxNTk1NDAwMTYzLCJleHAiOjMxOTMzOTIzMjYsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.QFt2hXHObP3CzZI8AA3IXlf8YTUGEVy8yHq7giBO7O0\",\n            \"accessTokenExpiry\": 1595400763,\n            \"refreshTokenExpiry\": 1597992163,\n            \"generatedTime\": 1595400163\n        },\n        \"user\": {\n            \"id\": \"4ac89535-fd74-4567-a5e2-d8defb7193e1\",\n            \"first_name\": \"William\",\n            \"last_name\": \"Doie\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"william@example.com\",\n            \"username\": \"william@example.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"2ba29891-079e-454d-b39c-4e48583da5bd\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"0c2776d9-2bd5-4b6a-ae69-84f58adbb308\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								},
+								{
+									"name": "External Users Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"rscipher001+johndoe12@gmail.com\",\n    \"password\": \"rscipher001+johndoe12@gmail.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/login",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2937"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b79-oYoSbCHunjjUgfR+cU3ddDoz1fw\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 07 Jul 2020 13:36:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"OTP successfully sent to registered email and phone number\",\n    \"data\": {\n        \"tokens\": {\n            \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5MmI0NjE3LTljNzYtNDY0MC05ZjU5LTdhYzQzMjBiMTIwNCIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiMjlmOGE1YjMtZDE2NC00NTgxLWExYjYtOGM2MDMxZTlmZGFjIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjA5MGE5OWI2LTRmNzAtNDg3MC1hMDA3LTQ4Zjc0MjdjNThkZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6Ijg0ZTlhYTIzLTQxZDEtNDVhYy1iMmQ2LThhYWIyOGRkMTBhMCJ9LCJpYXQiOjE1OTQxMjkwMTMsImV4cCI6MzE4ODI1ODYyNiwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.fB3sZwlH0zjd7dybRtrpaCFE0QRdgQsv8t17LPiLejM\",\n            \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5MmI0NjE3LTljNzYtNDY0MC05ZjU5LTdhYzQzMjBiMTIwNCIsImZpcnN0X25hbWUiOiJKb2huIiwibGFzdF9uYW1lIjoiRG9lIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJzY2lwaGVyMDAxK2pvaG5kb2UxMkBnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiMjlmOGE1YjMtZDE2NC00NTgxLWExYjYtOGM2MDMxZTlmZGFjIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjA5MGE5OWI2LTRmNzAtNDg3MC1hMDA3LTQ4Zjc0MjdjNThkZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6Ijg0ZTlhYTIzLTQxZDEtNDVhYy1iMmQ2LThhYWIyOGRkMTBhMCJ9LCJyZWZyZXNoIjp0cnVlLCJpYXQiOjE1OTQxMjkwMTMsImV4cCI6MzE5MDg1MDAyNiwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.YWx5_wckqMy_UVTtn-8q9kZb_i0den3X8PdZapaIxoA\",\n            \"accessTokenExpiry\": 1594129613,\n            \"refreshTokenExpiry\": 1596721013,\n            \"generatedTime\": 1594129013\n        },\n        \"user\": {\n            \"id\": \"492b4617-9c76-4640-9f59-7ac4320b1204\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"language\": [\n                \"English\"\n            ],\n            \"email\": \"rscipher001+johndoe12@gmail.com\",\n            \"username\": \"rscipher001+johndoe12@gmail.com\",\n            \"user_status\": \"Pending\",\n            \"is_service_provider\": true,\n            \"is_account_manager\": false,\n            \"is_executive_account_manager\": false,\n            \"is_service_provider_employee\": false,\n            \"active_role\": \"service_provider\",\n            \"role\": {\n                \"user_role_id\": \"090a99b6-4f70-4870-a007-48f7427c58de\",\n                \"role_name\": \"technician\",\n                \"role_id\": \"b03e6b6d-350b-46eb-b706-de97d7396a00\"\n            },\n            \"tenant\": {\n                \"id\": \"84e9aa23-41d1-45ac-b2d6-8aab28dd10a0\"\n            }\n        }\n    },\n    \"error\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "[DELETED] External Users Login Phone",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d65dde36-0bbf-4d8b-86dc-4a6d3e40e840",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var reqBody = JSON.parse(request.data);\r",
+											"if(reqBody.role === 'technician'){\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"technician\");    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"customer\");\r",
+											"}\r",
+											"postman.setEnvironmentVariable(\"otp\", jsonData.otp);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone_number\": \"+919876543210\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/login",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "External Users App Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "942b986d-a4c7-4573-9826-7207acf5c47f",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var reqBody = JSON.parse(request.data);\r",
+											"if(reqBody.role === 'technician'){\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"technician\");    \r",
+											"}else{\r",
+											"    postman.setEnvironmentVariable(\"userRole\", \"customer\");\r",
+											"}\r",
+											"postman.setEnvironmentVariable(\"otp\", jsonData.otp);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone_number\": \"+919876543210\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/app-login",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"app-login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload profile image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE5ZmE4M2VkLWZkODgtNDMwYy1hZDEyLTExNGQ2YTAwMDkxMyIsImZpcnN0X25hbWUiOiJhYmNkIiwibGFzdF9uYW1lIjoid3h5eiIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiIxMjM3QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiMTIzN0BnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiM2IxYTIxZWUtYzI5ZS00YzU3LWIxYWUtZTdjNzA2YzA1ZTEwIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjBiOGM4MTEwLTgyM2UtNDhkYS1hZmNhLTM5ZDhjNzk5YzEyZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6IjQ2ZTBkZjQxLTQwN2UtNGJmYS1hNDk2LTBkMzBiMDUzMjQ4NyJ9LCJpYXQiOjE1OTQ3MzU3MTQsImV4cCI6MzE4OTQ3MjAyOCwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.RW3kAsoGUNNBk8Eb9_PCsRTUG_uVgsuVd2fq6WuXpFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/aman/Pictures/getServices.png"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/update/image",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"update",
+										"image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE5ZmE4M2VkLWZkODgtNDMwYy1hZDEyLTExNGQ2YTAwMDkxMyIsImZpcnN0X25hbWUiOiJhYmNkIiwibGFzdF9uYW1lIjoid3h5eiIsImxhbmd1YWdlIjpbIkVuZ2xpc2giXSwiZW1haWwiOiIxMjM3QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiMTIzN0BnbWFpbC5jb20iLCJ1c2VyX3N0YXR1cyI6IlBlbmRpbmciLCJkZXZpY2VfdHlwZSI6bnVsbCwiZGV2aWNlX2lkIjoiM2IxYTIxZWUtYzI5ZS00YzU3LWIxYWUtZTdjNzA2YzA1ZTEwIiwiaXNfc2VydmljZV9wcm92aWRlciI6dHJ1ZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6InNlcnZpY2VfcHJvdmlkZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6IjBiOGM4MTEwLTgyM2UtNDhkYS1hZmNhLTM5ZDhjNzk5YzEyZSIsInJvbGVfbmFtZSI6InRlY2huaWNpYW4iLCJyb2xlX2lkIjoiYjAzZTZiNmQtMzUwYi00NmViLWI3MDYtZGU5N2Q3Mzk2YTAwIn0sInRlbmFudCI6eyJpZCI6IjQ2ZTBkZjQxLTQwN2UtNGJmYS1hNDk2LTBkMzBiMDUzMjQ4NyJ9LCJpYXQiOjE1OTQ3MzU3MTQsImV4cCI6MzE4OTQ3MjAyOCwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.RW3kAsoGUNNBk8Eb9_PCsRTUG_uVgsuVd2fq6WuXpFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/image",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(App) Update Device Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"deviceToken\":\"123final\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/updateDeviceToken",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"updateDeviceToken"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "External Users Get All Roles",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"jude+asdfasdfas@subcodevs.com\",\n    \"password\": \"7LCVuuXA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/getRoles",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"getRoles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Existing Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"jude@subcodevs.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/register/check-existance",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"check-existance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add New Role To Existing User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"jude+4septsp140@subcodevs.com\",\n    \"password\": \"jude+4septsp140@subcodevs.com\",\n    \"role\": \"account_manager\",\n    \"referral_code\": \"669071\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api2}}/auth/register/add-new-role",
+									"host": [
+										"{{api2}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"add-new-role"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Account Manager",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"jude+4septcustomer@subcodevs.com\",\n    \"password\": \"jude+4septcustomer@subcodevs.com\",\n    \"role\": \"account_manager\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/register/add-new-role",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"register",
+												"add-new-role"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "86"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"56-5I3XRaKyYZS9X4RPOkOF8GyfE9E\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 04 Sep 2020 14:36:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 500,\n    \"message\": \"User is already an account manager\",\n    \"data\": null,\n    \"error\": null\n}"
+								},
+								{
+									"name": "Add New Role To Existing User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"jude+4septcustomer@subcodevs.com\",\n    \"password\": \"jude+4septcustomer@subcodevs.com\",\n    \"role\": \"service_provider\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api2}}/auth/register/add-new-role",
+											"host": [
+												"{{api2}}"
+											],
+											"path": [
+												"auth",
+												"register",
+												"add-new-role"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "login_cookie"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "82"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"52-OauHHZFrl1eOXHnneHXJD66AR4Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 04 Sep 2020 14:19:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"message\": \"New role assigned successfully\",\n    \"data\": null,\n    \"error\": null\n}"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categories (SP and customer App)",
+			"item": [
+				{
+					"name": "get category by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "login_cookie",
+								"type": "text",
+								"value": "e3f21546-bdf3-4668-8066-bcd3580defed"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{api2}}/categories/3863927c-be54-416b-96bd-ec56e7b13270",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"categories",
+								"3863927c-be54-416b-96bd-ec56e7b13270"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "categories list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "login_cookie",
+										"value": "e3f21546-bdf3-4668-8066-bcd3580defed",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url2}}/categories?page=1&size=1",
+									"host": [
+										"{{url2}}"
+									],
+									"path": [
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "avc",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "login_cookie"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-lf5PN/JgaDzdCz2g3EQchBGK9Vw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Jun 2020 05:59:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Categories list\",\n    \"categories\": [\n        {\n            \"id\": \"60c89c2d-f1d1-43aa-989f-338aad5ea79c\",\n            \"name\": \"Caregivers & Nurses\",\n            \"icon\": null,\n            \"created_at\": \"2020-06-01T08:23:26.492Z\",\n            \"updated_at\": \"2020-06-01T08:23:26.484Z\",\n            \"parent_category\": null,\n            \"sub_category\": null,\n            \"slug\": \"caregivers_&_nurses\",\n            \"license_required\": 2,\n            \"lead_cost\": \"0.00\",\n            \"is_activate\": \"1\",\n            \"order\": 1,\n            \"outbound\": \"INBOUND_OUTBOUND\"\n        }\n    ],\n    \"totalCount\": \"30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNDQ1ODg5LTA4MTctNGI2Yi05ZWFiLWRiZmE1ODJjNDJiMSIsImZpcnN0X25hbWUiOiJKaWdhciIsImxhc3RfbmFtZSI6Ik0iLCJsYW5ndWFnZSI6WyJFbmdsaXNoIl0sImVtYWlsIjoiZGV2LmppZ2FydkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImRldi5qaWdhcnZAZ21haWwuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOiJtb2JpbGUiLCJkZXZpY2VfaWQiOiJkYzI1NTBhYS0zZjYwLTRkMDgtODgyOS1hMmFkNjY3NDg1YWQiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjpmYWxzZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6ImN1c3RvbWVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIzYTRhNmYzNi0zMzA5LTRmYTMtYWJlOC01OTg2Y2NhYzE0NGEiLCJyb2xlX25hbWUiOiJjdXN0b21lciIsInJvbGVfaWQiOiIzODQ5OWY4NC1lNGYzLTQ2ZTAtOTI3MC02NzNjNWJkZjgxMWIifSwidGVuYW50Ijp7ImlkIjpudWxsfSwiaWF0IjoxNTk1MzU4MTYwLCJleHAiOjMxOTA3MTY5MjAsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.MMnrmnUGzeWFB7KZiBSVBibY8pZ9nPf2MQTlyw5LP4k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api2}}/categories?parentId=b92ae2b5-a252-4c36-9401-40fda7659230",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "fat",
+									"disabled": true
+								},
+								{
+									"key": "parentId",
+									"value": "b92ae2b5-a252-4c36-9401-40fda7659230"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get child Categories ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNDQ1ODg5LTA4MTctNGI2Yi05ZWFiLWRiZmE1ODJjNDJiMSIsImZpcnN0X25hbWUiOiJKaWdhciIsImxhc3RfbmFtZSI6Ik0iLCJsYW5ndWFnZSI6WyJFbmdsaXNoIl0sImVtYWlsIjoiZGV2LmppZ2FydkBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImRldi5qaWdhcnZAZ21haWwuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOiJtb2JpbGUiLCJkZXZpY2VfaWQiOiJkYzI1NTBhYS0zZjYwLTRkMDgtODgyOS1hMmFkNjY3NDg1YWQiLCJpc19zZXJ2aWNlX3Byb3ZpZGVyIjpmYWxzZSwiaXNfYWNjb3VudF9tYW5hZ2VyIjpmYWxzZSwiaXNfZXhlY3V0aXZlX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX3NlcnZpY2VfcHJvdmlkZXJfZW1wbG95ZWUiOmZhbHNlLCJhY3RpdmVfcm9sZSI6ImN1c3RvbWVyIiwicm9sZSI6eyJ1c2VyX3JvbGVfaWQiOiIzYTRhNmYzNi0zMzA5LTRmYTMtYWJlOC01OTg2Y2NhYzE0NGEiLCJyb2xlX25hbWUiOiJjdXN0b21lciIsInJvbGVfaWQiOiIzODQ5OWY4NC1lNGYzLTQ2ZTAtOTI3MC02NzNjNWJkZjgxMWIifSwidGVuYW50Ijp7ImlkIjpudWxsfSwiaWF0IjoxNTk1MzU4MTYwLCJleHAiOjMxOTA3MTY5MjAsImF1ZCI6ImhpcmVhc2FwLmNvbSIsImlzcyI6ImFjY291bnRzLmhpcmVhc2FwLmNvbSJ9.MMnrmnUGzeWFB7KZiBSVBibY8pZ9nPf2MQTlyw5LP4k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api2}}/categories?parentId=c4dc929f-6079-4d40-bee4-0d20fe4ea740",
+							"host": [
+								"{{api2}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "parentId",
+									"value": "c4dc929f-6079-4d40-bee4-0d20fe4ea740"
+								},
+								{
+									"key": "search",
+									"value": "Pe",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d0dbf4c1-f5ef-4c22-b89e-d1869cc7867c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a56885d8-44b4-473a-89ac-0ae046e0e55b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "03328ffa-8b51-4dea-90ef-f194820b9093",
+			"key": "userToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTcyZmFhLWM1OTctNDUzNS04OWY4LTIyOWY2NzNkYTcyNiIsImZpcnN0X25hbWUiOiJKaWdhciIsImxhc3RfbmFtZSI6IjExIiwibGFuZ3VhZ2UiOlsiRW5nbGlzaCJdLCJlbWFpbCI6IjExQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiMTFAZ21haWwuY29tIiwidXNlcl9zdGF0dXMiOiJQZW5kaW5nIiwiZGV2aWNlX3R5cGUiOiJhbmRyb2lkIiwiZGV2aWNlX2lkIjoiYjVmNjE5NjYtYmI3YS00Y2ZmLTg0ZTctODJkOTQ3YzhjZmU3IiwiaXNfc2VydmljZV9wcm92aWRlciI6ZmFsc2UsImlzX2FjY291bnRfbWFuYWdlciI6ZmFsc2UsImlzX2V4ZWN1dGl2ZV9hY2NvdW50X21hbmFnZXIiOmZhbHNlLCJpc19zZXJ2aWNlX3Byb3ZpZGVyX2VtcGxveWVlIjpmYWxzZSwiZWFtX3N0YXR1cyI6bnVsbCwiYW1fc3RhdHVzIjpudWxsLCJzcF9zdGF0dXMiOm51bGwsImFjdGl2ZV9yb2xlIjoiY3VzdG9tZXIiLCJyb2xlIjp7InVzZXJfcm9sZV9pZCI6Ijc5MDk0Y2NiLWNjNGUtNDk2Yy04YWM3LTIzOWFmNGI1NDc4ZiIsInJvbGVfbmFtZSI6ImN1c3RvbWVyIiwicm9sZV9pZCI6IjM4NDk5Zjg0LWU0ZjMtNDZlMC05MjcwLTY3M2M1YmRmODExYiJ9LCJ0ZW5hbnQiOnsiaWQiOm51bGx9LCJpYXQiOjE1OTg1OTYyNDgsImV4cCI6MTU5ODU5Njg0OCwiYXVkIjoiaGlyZWFzYXAuY29tIiwiaXNzIjoiYWNjb3VudHMuaGlyZWFzYXAuY29tIn0.jw3wC6keFmfMmAzocyiMmgfDIGFSYE97krtK8SolwbU"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
